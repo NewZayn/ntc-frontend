@@ -1,0 +1,20 @@
+@if (notice()) {
+  <article class="container">
+    @if (notice()!.category) {
+      <app-category-badge [category]="notice()!.category!" />
+    }
+    <h1 class="article-title">{{ notice()!.title }}</h1>
+    <time class="article-date">{{ notice()!.publishedDate | date:'longDate' }}</time>
+
+    @if (notice()!.featuredImage) {
+      <div class="featured-image">
+        <img
+          [src]="getImageUrl(notice()!.featuredImage!.url)"
+          [alt]="notice()!.featuredImage!.alternativeText || notice()!.title"
+        />
+      </div>
+    }
+
+    <app-block-renderer [content]="getContentBlocks()" />
+  </article>
+}

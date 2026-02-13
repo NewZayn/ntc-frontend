@@ -1,0 +1,15 @@
+<div class="container">
+  <h1 class="page-title">All Notices</h1>
+
+  @if (notices().length > 0) {
+    <div class="notices-grid">
+      @for (notice of notices(); track notice.documentId) {
+        <app-notice-card [notice]="notice" />
+      }
+    </div>
+  } @else {
+    <div class="empty-state">
+      <p>No notices published yet.</p>
+    </div>
+  }
+</div>

@@ -1,0 +1,26 @@
+.container {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 4rem 1rem;
+}
+
+.page-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 2rem;
+}
+
+.content {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #d1d5db;
+}
+
+.content p {
+  margin-bottom: 1.25em;
+}
+
+.content strong {
+  color: #fff;
+}

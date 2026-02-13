@@ -1,0 +1,29 @@
+<div class="container">
+  <section class="hero">
+    <h1 class="hero-title">NTC</h1>
+    <p class="hero-subtitle">
+      Notices Tech &amp; Connectivity &mdash; Dispatches from the frontier
+      of the internet.
+    </p>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2 class="section-title">Latest Notices</h2>
+      <a routerLink="/notices" class="view-all">View all &rarr;</a>
+    </div>
+
+    @if (notices().length > 0) {
+      <div class="notices-grid">
+        @for (notice of notices(); track notice.documentId) {
+          <app-notice-card [notice]="notice" />
+        }
+      </div>
+    } @else {
+      <div class="empty-state">
+        <p class="empty-title">No notices yet.</p>
+        <p class="empty-subtitle">Content will appear here once published via Strapi.</p>
+      </div>
+    }
+  </section>
+</div>
