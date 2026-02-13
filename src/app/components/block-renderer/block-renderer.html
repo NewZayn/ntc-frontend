@@ -1,0 +1,50 @@
+<div class="prose">
+  @for (block of content(); track $index) {
+    @switch (block.type) {
+      @case ('paragraph') {
+        <p [innerHTML]="renderInline(block.children)"></p>
+      }
+      @case ('heading') {
+        @switch (block.level) {
+          @case (1) { <h1 [innerHTML]="renderInline(block.children)"></h1> }
+          @case (2) { <h2 [innerHTML]="renderInline(block.children)"></h2> }
+          @case (3) { <h3 [innerHTML]="renderInline(block.children)"></h3> }
+          @case (4) { <h4 [innerHTML]="renderInline(block.children)"></h4> }
+          @case (5) { <h5 [innerHTML]="renderInline(block.children)"></h5> }
+          @case (6) { <h6 [innerHTML]="renderInline(block.children)"></h6> }
+        }
+      }
+      @case ('list') {
+        @if (block.format === 'ordered') {
+          <ol>
+            @for (item of block.children; track $index) {
+              <li [innerHTML]="renderListItem(item)"></li>
+            }
+          </ol>
+        } @else {
+          <ul>
+            @for (item of block.children; track $index) {
+              <li [innerHTML]="renderListItem(item)"></li>
+            }
+          </ul>
+        }
+      }
+      @case ('image') {
+        <figure class="block-image">
+          <img
+            [src]="getImageUrl(block.image.url)"
+            [alt]="block.image.alternativeText || ''"
+            [width]="block.image.width"
+            [height]="block.image.height"
+          />
+        </figure>
+      }
+      @case ('quote') {
+        <blockquote [innerHTML]="renderInline(block.children)"></blockquote>
+      }
+      @case ('code') {
+        <pre><code [innerHTML]="renderInline(block.children)"></code></pre>
+      }
+    }
+  }
+</div>

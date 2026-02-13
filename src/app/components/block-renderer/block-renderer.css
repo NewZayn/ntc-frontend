@@ -1,0 +1,82 @@
+.prose {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: #d1d5db;
+}
+
+.prose h1, .prose h2, .prose h3,
+.prose h4, .prose h5, .prose h6 {
+  color: #fff;
+  font-weight: 700;
+  margin-top: 2em;
+  margin-bottom: 0.75em;
+}
+
+.prose h1 { font-size: 2.25rem; }
+.prose h2 { font-size: 1.875rem; }
+.prose h3 { font-size: 1.5rem; }
+.prose h4 { font-size: 1.25rem; }
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.prose a {
+  color: #22d3ee;
+  text-decoration: underline;
+}
+
+.prose a:hover {
+  color: #67e8f9;
+}
+
+.prose strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.prose ul, .prose ol {
+  padding-left: 1.5em;
+  margin-bottom: 1.25em;
+}
+
+.prose li {
+  margin-bottom: 0.5em;
+}
+
+.prose blockquote {
+  border-left: 3px solid #22d3ee;
+  padding-left: 1em;
+  margin: 1.5em 0;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.prose pre {
+  background: #1f2937;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5em 0;
+}
+
+.prose code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875em;
+}
+
+.prose :not(pre) > code {
+  background: #1f2937;
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+}
+
+.block-image {
+  margin: 2rem 0;
+}
+
+.block-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}

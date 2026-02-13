@@ -1,0 +1,12 @@
+<header class="header">
+  <nav class="header-nav">
+    <a routerLink="/" class="logo">NTC</a>
+    <ul class="nav-list">
+      @for (item of navItems; track item.path) {
+        <li>
+          <a [routerLink]="item.path" class="nav-link">{{ item.label }}</a>
+        </li>
+      }
+    </ul>
+  </nav>
+</header>

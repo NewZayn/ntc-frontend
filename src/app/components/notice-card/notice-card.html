@@ -1,0 +1,22 @@
+<a [routerLink]="['/notices', notice().slug]" class="card-link">
+  <article class="card">
+    @if (notice().featuredImage) {
+      <div class="card-image">
+        <img
+          [src]="strapi.getMediaUrl(notice().featuredImage!.url)"
+          [alt]="notice().featuredImage!.alternativeText || notice().title"
+        />
+      </div>
+    }
+    <div class="card-body">
+      @if (notice().category) {
+        <app-category-badge [category]="notice().category!" />
+      }
+      <h3 class="card-title">{{ notice().title }}</h3>
+      @if (notice().excerpt) {
+        <p class="card-excerpt">{{ notice().excerpt }}</p>
+      }
+      <time class="card-date">{{ notice().publishedDate | date:'mediumDate' }}</time>
+    </div>
+  </article>
+</a>
