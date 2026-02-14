@@ -1,4 +1,4 @@
-# NTC - Notices Tech & Connectivity
+# Angular News App
 
 A modern Angular SPA for browsing tech & connectivity news, consuming a Strapi 5 headless CMS via REST API.
 
@@ -51,7 +51,7 @@ src/
 ### Prerequisites
 
 - Node.js >= 20
-- A running Strapi 5 instance (see [ntc-api](https://github.com/NewZayn/ntc-api) for the backend)
+- A running Strapi 5 instance providing the REST API
 
 ### Development
 

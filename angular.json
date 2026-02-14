@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ntc-frontend": {
+    "angular-news-app": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:class": {
@@ -87,10 +87,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ntc-frontend:build:production"
+              "buildTarget": "angular-news-app:build:production"
             },
             "development": {
-              "buildTarget": "ntc-frontend:build:development"
+              "buildTarget": "angular-news-app:build:development"
             }
           },
           "defaultConfiguration": "development"

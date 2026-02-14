@@ -13,7 +13,7 @@ RUN npm run build
 # ---- Production ----
 FROM nginx:alpine AS production
 
-COPY --from=build /app/dist/ntc-frontend/browser /usr/share/nginx/html
+COPY --from=build /app/dist/angular-news-app/browser /usr/share/nginx/html
 
 # SPA routing: redirect all requests to index.html
 RUN printf 'server {\n\
