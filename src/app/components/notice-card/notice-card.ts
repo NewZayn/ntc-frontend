@@ -9,7 +9,6 @@ import { CategoryBadge } from '../category-badge/category-badge';
   selector: 'app-notice-card',
   imports: [RouterLink, DatePipe, CategoryBadge],
   templateUrl: './notice-card.html',
-  styleUrl: './notice-card.css',
 })
 export class NoticeCard {
   notice = input.required<Notice>();

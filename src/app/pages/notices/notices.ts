@@ -7,7 +7,6 @@ import { NoticeCard } from '../../components/notice-card/notice-card';
   selector: 'app-notices',
   imports: [NoticeCard],
   templateUrl: './notices.html',
-  styleUrl: './notices.css',
 })
 export class Notices implements OnInit {
   private strapi = inject(StrapiService);

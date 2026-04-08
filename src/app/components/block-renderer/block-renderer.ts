@@ -12,7 +12,6 @@ import { StrapiService } from '../../services/strapi.service';
   selector: 'app-block-renderer',
   imports: [],
   templateUrl: './block-renderer.html',
-  styleUrl: './block-renderer.css',
 })
 export class BlockRenderer {
   content = input.required<StrapiBlock[]>();

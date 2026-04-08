@@ -10,7 +10,6 @@ import { BlockRenderer } from '../../components/block-renderer/block-renderer';
   selector: 'app-notice-detail',
   imports: [DatePipe, CategoryBadge, BlockRenderer],
   templateUrl: './notice-detail.html',
-  styleUrl: './notice-detail.css',
 })
 export class NoticeDetail implements OnInit {
   private route = inject(ActivatedRoute);

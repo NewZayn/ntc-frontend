@@ -8,7 +8,6 @@ import { NoticeCard } from '../../components/notice-card/notice-card';
   selector: 'app-home',
   imports: [RouterLink, NoticeCard],
   templateUrl: './home.html',
-  styleUrl: './home.css',
 })
 export class Home implements OnInit {
   private strapi = inject(StrapiService);
