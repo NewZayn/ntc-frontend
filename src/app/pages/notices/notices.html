@@ -1,15 +1,15 @@
-<div class="container">
-  <h1 class="page-title">All Notices</h1>
+<div class="mx-auto max-w-6xl px-4 py-16">
+  <h1 class="mb-12 text-4xl font-bold text-white">All Notices</h1>
 
   @if (notices().length > 0) {
-    <div class="notices-grid">
-      @for (notice of notices(); track notice.documentId) {
-        <app-notice-card [notice]="notice" />
-      }
-    </div>
+  <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+    @for (notice of notices(); track notice.documentId) {
+    <app-notice-card [notice]="notice" />
+    }
+  </div>
   } @else {
-    <div class="empty-state">
-      <p>No notices published yet.</p>
-    </div>
+  <div class="py-16 text-center text-lg text-gray-500">
+    <p>No notices published yet.</p>
+  </div>
   }
 </div>

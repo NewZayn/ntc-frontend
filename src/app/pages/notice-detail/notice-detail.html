@@ -1,20 +1,21 @@
 @if (notice()) {
-  <article class="container">
-    @if (notice()!.category) {
-      <app-category-badge [category]="notice()!.category!" />
-    }
-    <h1 class="article-title">{{ notice()!.title }}</h1>
-    <time class="article-date">{{ notice()!.publishedDate | date:'longDate' }}</time>
+<article class="mx-auto max-w-3xl px-4 py-16">
+  @if (notice()!.category) {
+  <app-category-badge [category]="notice()!.category!" />
+  }
+  <h1 class="mb-4 mt-4 text-3xl font-bold text-white md:text-5xl">{{ notice()!.title }}</h1>
+  <time class="mb-8 block text-gray-500">{{ notice()!.publishedDate | date:'longDate' }}</time>
 
-    @if (notice()!.featuredImage) {
-      <div class="featured-image">
-        <img
-          [src]="getImageUrl(notice()!.featuredImage!.url)"
-          [alt]="notice()!.featuredImage!.alternativeText || notice()!.title"
-        />
-      </div>
-    }
+  @if (notice()!.featuredImage) {
+  <div class="relative mb-10 aspect-video w-full overflow-hidden rounded-xl">
+    <img
+      [src]="getImageUrl(notice()!.featuredImage!.url)"
+      [alt]="notice()!.featuredImage!.alternativeText || notice()!.title"
+      class="h-full w-full object-cover"
+    />
+  </div>
+  }
 
-    <app-block-renderer [content]="getContentBlocks()" />
-  </article>
+  <app-block-renderer [content]="getContentBlocks()" />
+</article>
 }

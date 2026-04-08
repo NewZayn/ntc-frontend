@@ -1,22 +1,31 @@
-<a [routerLink]="['/notices', notice().slug]" class="card-link">
-  <article class="card">
+<a [routerLink]="['/notices', notice().slug]" class="group block h-full text-inherit no-underline">
+  <article
+    class="flex h-full flex-col overflow-hidden rounded-xl border border-gray-800 bg-gray-900 transition-colors duration-300 group-hover:border-cyan-400/50"
+  >
     @if (notice().featuredImage) {
-      <div class="card-image">
-        <img
-          [src]="strapi.getMediaUrl(notice().featuredImage!.url)"
-          [alt]="notice().featuredImage!.alternativeText || notice().title"
-        />
-      </div>
+    <div class="relative aspect-video overflow-hidden">
+      <img
+        [src]="strapi.getMediaUrl(notice().featuredImage!.url)"
+        [alt]="notice().featuredImage!.alternativeText || notice().title"
+        class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+      />
+    </div>
     }
-    <div class="card-body">
+    <div class="flex flex-1 flex-col p-5">
       @if (notice().category) {
-        <app-category-badge [category]="notice().category!" />
+      <app-category-badge [category]="notice().category!" />
       }
-      <h3 class="card-title">{{ notice().title }}</h3>
+      <h3
+        class="my-2 text-lg font-semibold text-white transition-colors duration-200 group-hover:text-cyan-400"
+      >
+        {{ notice().title }}
+      </h3>
       @if (notice().excerpt) {
-        <p class="card-excerpt">{{ notice().excerpt }}</p>
+      <p class="m-0 line-clamp-2 text-sm text-gray-400">{{ notice().excerpt }}</p>
       }
-      <time class="card-date">{{ notice().publishedDate | date:'mediumDate' }}</time>
+      <time class="mt-auto block pt-3 text-xs text-gray-600"
+        >{{ notice().publishedDate | date: 'mediumDate' }}</time
+      >
     </div>
   </article>
 </a>
